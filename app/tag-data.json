@@ -1,1 +1,43 @@
-{"markdown":1,"code":1,"features":1,"next-js":6,"math":1,"ols":1,"github":1,"guide":5,"tailwind":3,"holiday":1,"canada":1,"images":1,"feature":2,"writings":1,"book":1,"reflection":1,"multi-author":1}
+{
+  "Languages": {
+    "JavaScript": 8.5,
+    "TypeScript": 7,
+    "Python": 5
+  },
+  "Web and Services": {
+    "HTML5": 8.5,
+    "CSS3": 8.5,
+    "Jest": 5,
+    "Stripe": 6,
+    "REST": 8.5,
+    "GraphQL": 6.25,
+    "Socket.io": 6.5
+  },
+  "Frameworks": {
+    "React": 8.5,
+    "Next": 6.5,
+    "Express": 8,
+    "Tailwind CSS": 8.5
+  },
+  "Databases": {
+    "MySQL": 8,
+    "PostgreSQL": 8,
+    "MongoDB": 8,
+    "Elasticsearch": 8,
+    "Firebase": 7,
+    "Redis": 7.5
+  },
+  "Tools": {
+    "Git": 8.5,
+    "Docker": 8.5,
+    "NPM": 8.5,
+    "ChatGPT": 8.5,
+    "Babel": 8.5,
+    "Webpack": 8.5,
+    "Azure DevOps": 8.5,
+    "Slack": 8.5,
+    "Postman": 8.5,
+    "Swagger": 8.5,
+    "VS Code": 8.5
+  }
+}
