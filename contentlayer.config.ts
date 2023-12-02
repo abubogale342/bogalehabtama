@@ -45,22 +45,22 @@ const computedFields: ComputedFields = {
 /**
  * Count the occurrences of all tags across blog posts and write to json file
  */
-// function createTagCount(allBlogs) {
-//   const tagCount: Record<string, number> = {}
-//   allBlogs.forEach((file) => {
-//     if (file.tags && (!isProduction || file.draft !== true)) {
-//       file.tags.forEach((tag) => {
-//         const formattedTag = GithubSlugger.slug(tag)
-//         if (formattedTag in tagCount) {
-//           tagCount[formattedTag] += 1
-//         } else {
-//           tagCount[formattedTag] = 1
-//         }
-//       })
-//     }
-//   })
-//   writeFileSync('./app/tag-data.json', JSON.stringify(tagCount))
-// }
+function createTagCount(allBlogs) {
+  const tagCount: Record<string, number> = {}
+  allBlogs.forEach((file) => {
+    if (file.tags && (!isProduction || file.draft !== true)) {
+      file.tags.forEach((tag) => {
+        const formattedTag = GithubSlugger.slug(tag)
+        if (formattedTag in tagCount) {
+          tagCount[formattedTag] += 1
+        } else {
+          tagCount[formattedTag] = 1
+        }
+      })
+    }
+  })
+  writeFileSync('./app/tag-data.json', JSON.stringify(tagCount))
+}
 
 function createSearchIndex(allBlogs) {
   if (
@@ -74,41 +74,6 @@ function createSearchIndex(allBlogs) {
     console.log('Local search index generated...')
   }
 }
-
-export const Blog = defineDocumentType(() => ({
-  name: 'Blog',
-  filePathPattern: 'blog/**/*.mdx',
-  contentType: 'mdx',
-  fields: {
-    title: { type: 'string', required: true },
-    date: { type: 'date', required: true },
-    tags: { type: 'list', of: { type: 'string' }, default: [] },
-    lastmod: { type: 'date' },
-    draft: { type: 'boolean' },
-    summary: { type: 'string' },
-    images: { type: 'json' },
-    authors: { type: 'list', of: { type: 'string' } },
-    layout: { type: 'string' },
-    bibliography: { type: 'string' },
-    canonicalUrl: { type: 'string' },
-  },
-  computedFields: {
-    ...computedFields,
-    structuredData: {
-      type: 'json',
-      resolve: (doc) => ({
-        '@context': 'https://schema.org',
-        '@type': 'BlogPosting',
-        headline: doc.title,
-        datePublished: doc.date,
-        dateModified: doc.lastmod || doc.date,
-        description: doc.summary,
-        image: doc.images ? doc.images[0] : siteMetadata.socialBanner,
-        url: `${siteMetadata.siteUrl}/${doc._raw.flattenedPath}`,
-      }),
-    },
-  },
-}))
 
 export const Authors = defineDocumentType(() => ({
   name: 'Authors',
@@ -129,30 +94,30 @@ export const Authors = defineDocumentType(() => ({
   computedFields,
 }))
 
-// export default makeSource({
-//   contentDirPath: 'data',
-//   documentTypes: [Blog, Authors],
-//   mdx: {
-//     cwd: process.cwd(),
-//     remarkPlugins: [
-//       remarkExtractFrontmatter,
-//       remarkGfm,
-//       remarkCodeTitles,
-//       remarkMath,
-//       remarkImgToJsx,
-//     ],
-//     rehypePlugins: [
-//       rehypeSlug,
-//       rehypeAutolinkHeadings,
-//       rehypeKatex,
-//       [rehypeCitation, { path: path.join(root, 'data') }],
-//       [rehypePrismPlus, { defaultLanguage: 'js', ignoreMissing: true }],
-//       rehypePresetMinify,
-//     ],
-//   },
-//   onSuccess: async (importData) => {
-//     const { allBlogs } = await importData()
-//     createTagCount(allBlogs)
-//     createSearchIndex(allBlogs)
-//   },
-// })
+export default makeSource({
+  contentDirPath: 'data',
+  documentTypes: [Authors],
+  mdx: {
+    cwd: process.cwd(),
+    remarkPlugins: [
+      remarkExtractFrontmatter,
+      remarkGfm,
+      remarkCodeTitles,
+      remarkMath,
+      remarkImgToJsx,
+    ],
+    rehypePlugins: [
+      rehypeSlug,
+      rehypeAutolinkHeadings,
+      // rehypeKatex,
+      // [rehypeCitation, { path: path.join(root, 'data') }],
+      // [rehypePrismPlus, { defaultLanguage: 'js', ignoreMissing: true }],
+      // rehypePresetMinify,
+    ],
+  },
+  // onSuccess: async (importData) => {
+  //   const { allBlogs } = await importData()
+  //   createTagCount(allBlogs)
+  //   createSearchIndex(allBlogs)
+  // },
+})
