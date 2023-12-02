@@ -1,9 +1,9 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse } from 'next/server'
 
 export async function GET(request: NextRequest) {
   try {
-    return new NextResponse("Your data");
+    return new NextResponse('Your data')
   } catch (err: any) {
-    console.log(err.message);
+    console.log(err.message)
   }
 }
