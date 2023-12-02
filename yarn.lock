@@ -6726,6 +6726,7 @@ __metadata:
     remark-math: ^6.0.0
     tailwindcss: ^3.3.5
     typescript: ^5.3.2
+    unified: ^11.0.4
     unist-util-visit: ^5.0.0
   languageName: unknown
   linkType: soft
@@ -15579,7 +15580,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unified@npm:^11.0.0":
+"unified@npm:^11.0.0, unified@npm:^11.0.4":
   version: 11.0.4
   resolution: "unified@npm:11.0.4"
   dependencies:
