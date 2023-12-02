@@ -76,11 +76,24 @@ module.exports = () => {
         },
       ]
     },
-    webpack: (config, options) => {
+    webpack: (config, { isServer }) => {
       config.module.rules.push({
         test: /\.svg$/,
         use: ['@svgr/webpack'],
       })
+
+      config.module.rules.push({
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        use: [
+          'file-loader',
+        ],
+      });
+
+      if (isServer) {
+        config.externals.push({
+          canvas: 'commonjs canvas',
+        });
+      }
 
       return config
     },
