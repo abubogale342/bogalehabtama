@@ -71,7 +71,7 @@ export default function Home() {
         </p>
         <div className="grid grid-cols-1 gap-3 py-2 md:grid-cols-2 md:gap-3 lg:grid-cols-3 lg:gap-3">
           {services.map((service, index) => (
-            <Card className="max-w-[400px]">
+            <Card className="max-w-[400px]" key={index}>
               <CardHeader className="flex gap-3">
                 <div className="h-10 w-10 rounded-lg bg-white dark:bg-dark">{service.element}</div>
                 <div className="flex flex-col">
