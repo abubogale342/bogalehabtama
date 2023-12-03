@@ -84,16 +84,16 @@ module.exports = () => {
 
       config.module.rules.push({
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        use: [
-          'file-loader',
-        ],
-      });
+        use: ['file-loader'],
+      })
 
       if (isServer) {
         config.externals.push({
           canvas: 'commonjs canvas',
-        });
+        })
       }
+
+      config.resolve.alias.canvas = false
 
       return config
     },

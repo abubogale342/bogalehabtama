@@ -31,29 +31,12 @@ export default function Skills() {
 
   return (
     <>
-      {/* <Accordion variant="splitted" className="w-full">
-        {Object.keys(tagData).map((key, index) => {
-          return (
-            <AccordionItem key={index} aria-label={key} title={key} className="w-full">
-              {Object.keys(tagData[key]).map((val, index) => (
-                <Progress
-                  key={`${val} ${index}`}
-                  isStriped
-                  color={getColors(tagData[key][val] * 10)}
-                  label={val}
-                  value={tagData[key][val] * 10}
-                  className="my-2 w-full"
-                />
-              ))}
-            </AccordionItem>
-          )
-        })}
-      </Accordion> */}
       <div className="mb-10"></div>
       <Card>
         <CardBody>
           <p>
             <img
+              alt=""
               className="w-full"
               src={`https://skillicons.dev/icons?i=${skillIcons}&theme=${theme}&perline=${getPerline()}`}
             />

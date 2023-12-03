@@ -2,28 +2,30 @@
 
 import { Viewer, Worker } from '@react-pdf-viewer/core'
 import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout'
+
+import '@react-pdf-viewer/core/lib/styles/index.css'
+import '@react-pdf-viewer/default-layout/lib/styles/index.css'
+
 import { FaEye } from 'react-icons/fa'
+import Link from 'next/link'
 
 const Document = () => {
   const defaultLayoutPluginInstance = defaultLayoutPlugin()
 
   return (
     <>
-      <a
+      <Link
+        className="absolute bottom-0 right-0 z-10 flex items-center gap-1 rounded-lg bg-[#000] px-2.5 py-1.5 text-base font-medium text-white"
         href={`/document.pdf`}
         target="_blank"
-        className="absolute bottom-2.5 right-5 text-xl font-thin outline-none"
       >
-        <span className="flex items-center gap-1 text-black">
-          View Full Resume <FaEye />
-        </span>
-      </a>
-
-      <Worker workerUrl="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js">
-        <div className="h-40">
+        View Resume <FaEye />
+      </Link>
+      <div className="hidden h-4 rounded-md border border-gray-200 dark:border-gray-700 lg:block lg:h-40">
+        <Worker workerUrl="/pdf.worker.js">
           <Viewer fileUrl="/document.pdf" plugins={[defaultLayoutPluginInstance]} />
-        </div>
-      </Worker>
+        </Worker>
+      </div>
     </>
   )
 }

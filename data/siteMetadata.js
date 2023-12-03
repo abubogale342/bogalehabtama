@@ -3,7 +3,7 @@ const siteMetadata = {
   title: 'Personal Website',
   author: 'Habtamu Bogale',
   headerTitle: 'Habtamu Bogale',
-  description: 'personal portfolio website which can be used as contact and resume.',
+  description: `Greetings! I'm Habtamu Bogale, a software developer with an experience that spans the entire development stack, with a focus on React, Redux, Express, Node, PostgreSQL, Elasticsearch, MongoDB, and optimization techniques.`,
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
