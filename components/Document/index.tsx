@@ -15,7 +15,7 @@ const Document = () => {
   return (
     <>
       <Link
-        className="absolute bottom-0 right-0 z-10 flex items-center gap-1 rounded-lg bg-[#000] px-2.5 py-1.5 text-base font-medium text-white"
+        className="absolute -bottom-4 right-0 z-10 flex items-center gap-1 rounded-lg bg-[#000] px-2.5 py-1.5 text-base font-medium text-white"
         href={`/document.pdf`}
         target="_blank"
       >

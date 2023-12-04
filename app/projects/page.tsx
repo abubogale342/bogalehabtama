@@ -19,7 +19,7 @@ export default function Projects() {
             Here are some of the projects I have worked on ...
           </p>
         </div>
-        <div className="py-12">
+        <div className="pt-12">
           <div className="-m-4 flex flex-wrap">
             {projectsData.map((d) => (
               <Card

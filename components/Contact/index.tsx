@@ -43,7 +43,7 @@ export default function Contact() {
         <hr className="mb-2 opacity-20" />
       </div>
 
-      <Card className="rounded-b-none">
+      <Card>
         <div className="-mx-4 flex flex-wrap">
           <div
             className="wow fadeInUp w-full rounded-md px-8 pt-11 sm:p-[55px] lg:px-8 xl:p-[55px]"
@@ -126,7 +126,7 @@ export default function Contact() {
                   </div>
                 )}
 
-                <div className="w-full px-4">
+                <div className="mb-10 w-full px-4 sm:mb-0">
                   <button
                     disabled={success.loading}
                     type="submit"
