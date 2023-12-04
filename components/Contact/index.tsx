@@ -130,7 +130,7 @@ export default function Contact() {
                   <button
                     disabled={success.loading}
                     type="submit"
-                    className="border-blue-100 relative rounded-md border bg-[#000] px-10 py-4 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-opacity-80 hover:shadow-signUp dark:bg-white dark:text-[#000]"
+                    className="border-blue-100 relative rounded-md border bg-gray-900 px-10 py-4 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-opacity-80 hover:shadow-signUp dark:bg-white dark:text-[#000]"
                   >
                     Send message
                     {success.loading && (

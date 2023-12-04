@@ -15,17 +15,18 @@ const Document = () => {
   return (
     <>
       <Link
-        className="absolute -bottom-4 right-0 z-10 flex items-center gap-1 rounded-lg bg-[#000] px-2.5 py-1.5 text-base font-medium text-white"
+        className="absolute -bottom-4 z-10 flex w-full items-center justify-center gap-2.5 rounded-md bg-gray-900 py-1.5 text-base font-medium text-white lg:rounded-none"
         href={`/document.pdf`}
         target="_blank"
       >
-        View Resume <FaEye />
+        View Resume <FaEye size={22} />
       </Link>
-      <div className="hidden h-4 rounded-md border border-gray-200 dark:border-gray-700 lg:block lg:h-40">
+      <div className="hidden h-4 rounded-md shadow-md drop-shadow-md lg:block lg:h-44">
         <Worker workerUrl="/pdf.worker.js">
           <Viewer fileUrl="/document.pdf" plugins={[defaultLayoutPluginInstance]} />
         </Worker>
       </div>
+      <div className="mb-5"></div>
     </>
   )
 }

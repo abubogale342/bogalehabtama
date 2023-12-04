@@ -57,7 +57,7 @@ export default function Home() {
           {siteMetadata.description}{' '}
         </p>
         <Link
-          className="rounded-lg bg-[#000] px-4 py-2.5 text-base font-medium text-white dark:bg-white dark:text-black"
+          className="rounded-lg bg-gray-900 px-4 py-2.5 text-base font-medium text-white dark:bg-white dark:text-black"
           href="/contact"
         >
           Get in touch
