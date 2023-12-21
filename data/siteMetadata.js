@@ -8,16 +8,12 @@ const siteMetadata = {
   theme: 'system', // system, dark or light
   siteUrl: 'https://bogalehabtama.vercel.app/',
   siteRepo: 'https://github.com/abubogale342/bogalehabtama',
-  // siteLogo: '/static/images/logo.png',
-  // socialBanner: '/static/images/twitter-card.png',
-  // mastodon: 'https://mastodon.social/@mastodonuser',
   email: 'bogalehabtama@gmail.com',
   github: 'https://github.com/abubogale342',
   twitter: 'https://twitter.com/bogalehabtama',
   facebook: 'https://www.facebook.com/bogale.habtama/',
-  // youtube: 'https://youtube.com',
   telegram: 'https://t.me/bogalehabtama',
-  linkedin: 'https://www.linkedin.com/in/habtamu-bogale-60522815b/',
+  linkedin: 'https://www.linkedin.com/in/bogalehabtama/',
   locale: 'en-US',
   analytics: {
     // If you want to use an analytics provider you have to add it to the
@@ -27,16 +23,6 @@ const siteMetadata = {
       // We use an env variable for this site to avoid other users cloning our analytics ID
       umamiWebsiteId: process.env.NEXT_UMAMI_ID, // e.g. 123e4567-e89b-12d3-a456-426614174000
     },
-    // plausibleAnalytics: {
-    //   plausibleDataDomain: '', // e.g. tailwind-nextjs-starter-blog.vercel.app
-    // },
-    // simpleAnalytics: {},
-    // posthogAnalytics: {
-    //   posthogProjectApiKey: '', // e.g. 123e4567-e89b-12d3-a456-426614174000
-    // },
-    // googleAnalytics: {
-    //   googleAnalyticsId: '', // e.g. G-XXXXXXX
-    // },
   },
   newsletter: {
     // supports mailchimp, buttondown, convertkit, klaviyo, revue, emailoctopus
@@ -78,14 +64,6 @@ const siteMetadata = {
     kbarConfig: {
       searchDocumentsPath: 'search.json', // path to load documents to search
     },
-    // provider: 'algolia',
-    // algoliaConfig: {
-    //   // The application ID provided by Algolia
-    //   appId: 'R2IYF7ETH7',
-    //   // Public API key: it is safe to commit it
-    //   apiKey: '599cec31baffa4868cae4e79f180729b',
-    //   indexName: 'docsearch',
-    // },
   },
 }
 
